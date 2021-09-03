@@ -1,0 +1,33 @@
+﻿@model Spicyo.Models.Recipes
+
+@{ ViewData["RecipeType"] = "Detail of Order Medicine"; }
+@{ Layout = "_Layout3"; }
+<br />
+<div>
+    <h4>Details</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Recipe)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Recipe)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.RecipeType)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.RecipeType)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id" type="button" class="btn btn-warning">Edit</a>
+    <a asp-action="Index" type="button" class="btn btn-warning">Back to List</a>
+</div>

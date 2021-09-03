@@ -1,0 +1,41 @@
+﻿@model IEnumerable<Spicyo.Models.Recipes>
+
+@{ ViewData["RecipeType"] = "Home"; }
+@{ Layout = "_Layout"; }
+<br />
+<br />
+<br />
+<table class="table">
+    <thead>
+        <tr>
+            <th></th>
+            <th>
+                @Html.DisplayNameFor(model => model.Recipe)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RecipeType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+<tr>
+    <td>
+        <a asp-action="AddItem" asp-route-id="@item.Id" type="button" class="btn btn-warning">Click For Get Recipe</a>
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Recipe)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.RecipeType)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Price)
+    </td>
+</tr>}
+    </tbody>
+</table>
